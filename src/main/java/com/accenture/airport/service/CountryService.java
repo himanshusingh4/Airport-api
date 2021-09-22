@@ -127,5 +127,36 @@ public class CountryService {
 		}
 
 	}
+	
+	/**
+	 * This method is used to return full country name from Fuzzy word
+	 * 
+	 * @param fuzzyName Fuzzy or partial country name
+	 * @return Full country name
+	 * @throws ElementNotFoundException excep.tion in case of no result found
+	 */
+	public String getFullCountryName(String fuzzyName) throws ElementNotFoundException {
+
+		Optional<String> fullName = countryData.stream().map(c -> c.getName()).filter(c -> c.length() > fuzzyName.length())
+				.filter(s -> s.substring(0, fuzzyName.length()).equalsIgnoreCase(fuzzyName)).findFirst();
+
+		if (fullName.isPresent()) {
+
+			return fullName.get();
+
+		} else {
+
+			fullName = countryData.stream().map(c -> c.getName()).sorted(Comparator
+					.comparing(c -> c.length() - StringUtils.getLevenshteinDistance(c, fuzzyName), Comparator.reverseOrder()))
+					.findFirst();
+
+			if (fullName.isPresent()) {
+				return fullName.get();
+			} else {
+				throw new ElementNotFoundException(new ErrorResponse(ErrorCodes.COUNTRY_NAME_NOT_FOUND.name(),
+						ErrorCodes.COUNTRY_NAME_NOT_FOUND.getErrorMessage()));
+			}
+		}
+	}
 
 }
