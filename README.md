@@ -28,6 +28,7 @@ GET /actuator/health
 (2b) Build using Maven (mvn clean install).
 (2c) Run as spring boot application (mvn spring-boot:run).
 (2d) If for some reason cloning does not work from git repo then directly download the zip project, extract it and then import it in your IDE. Repeat the above steps again.
+In case of any issue in building this project, please let me know.
 
 
 # About Implementation
