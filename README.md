@@ -43,4 +43,6 @@ If reviewer wants, i can also do this assignment by loading the data into some l
 # Focus
 Other than implementing business logic, i always focus on clean code, Java docs, logs, meaningful JUnit test cases.
 
+# Bonus
+I have also written code to get full country name from partial/fuzzy country code. As it is not the perfect solution, i have not implementd it in my API but please have look into the method "getFullCountryName" in CountryService class and also JUnit for the same in CountryServiceTest class "fuzzySearchTest()" method.
 
