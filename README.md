@@ -23,11 +23,11 @@ GET /actuator/health
 
 # Getting Started
 
-1) You need to have jdk 8 or higher to build this project
-2a) Clone the repo to your favorite IDE(In case of Eclipse, after cloning first configure it as maven project)
-2b) Build using Maven (mvn clean install)
-2c) Run as spring boot application (mvn spring-boot:run)
-2d) If for some reason cloning does not work from git repo then directly download the zip project, extract it and then import it in your IDE. Repeat the above steps again.
+(1) You need to have jdk 8 or higher to build this project.
+(2a) Clone the repo to your favorite IDE(In case of Eclipse, after cloning first configure it as maven project).
+(2b) Build using Maven (mvn clean install).
+(2c) Run as spring boot application (mvn spring-boot:run).
+(2d) If for some reason cloning does not work from git repo then directly download the zip project, extract it and then import it in your IDE. Repeat the above steps again.
 
 
 # About Implementation
