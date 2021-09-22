@@ -84,5 +84,17 @@ public class CountryServiceTest {
 		assertEquals(ErrorCodes.COUNTRY_NAME_NOT_FOUND.getErrorMessage(),
 				elementNotFoundException.getErrorResponse().getMessage());
 	}
+	
+	@Test
+	@DisplayName("Test method to get full country name from fuzzy word")
+	void fuzzySearchTest() throws ElementNotFoundException {
+
+		assertTrue("Zimbabwe".equalsIgnoreCase(countryService.getFullCountryName("Zimba")));
+		assertTrue("Netherlands".equalsIgnoreCase(countryService.getFullCountryName("Nether")));
+		assertTrue("Australia".equalsIgnoreCase(countryService.getFullCountryName("ustraia")));
+		assertTrue("Croatia".equalsIgnoreCase(countryService.getFullCountryName("roatia")));
+		assertTrue("Spain".equalsIgnoreCase(countryService.getFullCountryName("Span")));
+		assertTrue("India".equalsIgnoreCase(countryService.getFullCountryName("Indi")));
+	}
 
 }
